@@ -1,0 +1,127 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(21, 252, 252)
+}
+
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    /* display: flex;
+    justify-content: center; */
+
+    padding: 30px;
+    /* height: 25%; */
+}
+
+h1{
+    text-align: center;
+   
+}
+
+
+main{
+    /* height: 75%; */
+    margin-top: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+div.timer{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 17%;
+}
+div.timer .time{
+    display: flex;
+    justify-content: center;
+}
+
+.days,.hours,.minutes,.seconds{
+    border: 1px solid rgb(21, 252, 252);
+    padding: 25px;
+    border-radius: 5px;
+    margin: 10px;
+    position: relative;
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+}
+
+button#set{
+    border: 2px solid red;
+    color: red;
+    padding: 6px 8px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button#set:hover{
+    font-size: large;
+}
+button#set:focus{
+    font-size: large;
+}
+
+.timer div p{
+    font-weight:lighter;
+    font-size: 65px;
+}
+
+input {
+    position: absolute;
+    width: calc(100% - 32px);
+    height: 100%;
+    border:none;
+    outline: none;
+    padding:1px 0px 10px 32px;
+    border-radius: 5px;
+    top: -10px;
+    left: 0px;
+    font-weight:lighter;
+    font-size: 55px;
+    background-color: white;
+    color: black;
+    filter: opacity(0);
+}
+
+.edit {
+    filter: opacity(1);
+}
+
+.timer div span{
+    text-align: center;
+    z-index: 2;
+}
+
+div.control{
+    margin-top: 5%;
+    width: 38%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px 0px;
+    border: 1px solid rgb(21, 252, 252);
+    border-radius: 5px;
+}
+
+.control p{
+    /* border: 1px solid rgb(21, 252, 252); */
+    padding: 3px;
+}
+
+/* .set {
+    background-color: white;
+    color: black;
+    cu
+} */

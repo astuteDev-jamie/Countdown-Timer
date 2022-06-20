@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="countdowntimer.css">
+    <script type="text/javascript" src="countdowntimer.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Count-down Timer</h1>
+    </header>
+    <main>
+        <div class="timer">
+            <div class="time">
+                <div class="days">
+                    <input class="running" name="days" type="number"  maxlength="2" disabled oninput="moveon(0)">
+                    <p>00</p>
+                    <span>Days</span>
+                </div>
+                <div class="hours">
+                    <input class="running" name="hours" type="number"  maxlength="2" disabled oninput="moveon(1)">
+                    <p>00</p>
+                    <span>Hours</span>
+                </div>
+                <div class="minutes">
+                    <input class="running" name="minutes" type="number"  maxlength="2" disabled oninput="moveon(2)">
+                    <p>00</p>
+                    <span>Minutes</span>
+                </div>
+                <div class="seconds">
+                    <input class="running" name="seconds" type="number"  maxlength="2" disabled oninput="moveon(3)">
+                    <p>00</p>
+                    <span>Seconds</span>
+                </div>
+            </div>
+            <div class="set">
+                <button id="set">Set</button>
+            </div>
+        </div>
+        
+        <div class="control">
+            <p id="reset">Reset</p>
+            <p id="sorp">Start/Pause</p>
+            <p id="stop">Stop</p>
+        </div>
+    </main>
+</body>
+</html>
