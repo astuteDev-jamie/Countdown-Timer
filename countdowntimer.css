@@ -120,6 +120,14 @@ div.control{
     padding: 3px;
 }
 
+.control p:focus{
+    /* border: 1px solid rgb(21, 252, 252); */
+    padding: 3px;
+    filter: brightness(50%);
+}
+
+
+
 /* .set {
     background-color: white;
     color: black;
