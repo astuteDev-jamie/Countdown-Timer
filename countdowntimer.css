@@ -6,42 +6,31 @@
 }
 
 body {
-    background-color: black;
+    background:linear-gradient(black 30%, green );
     display: flex;
     flex-direction: column;
     height: 100vh;
+    /* font-size:calc(100% - 10vmin) ; */
 }
 
 header {
-    /* display: flex;
-    justify-content: center; */
-
     padding: 30px;
-    /* height: 25%; */
 }
 
-h1{
+h1 {
     text-align: center;
-   
 }
-
 
 main{
-    /* height: 75%; */
     margin-top: 20px;
     align-items: center;
-    display: flex;
     flex-direction: column;
-    /* justify-content: center; */
 }
 
 div.timer{
-    width: 60%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 17%;
+    margin:20px auto;
 }
+
 div.timer .time{
     display: flex;
     justify-content: center;
@@ -56,22 +45,6 @@ div.timer .time{
     overflow: clip;
     display: flex;
     flex-direction: column;
-}
-
-button#set{
-    border: 2px solid red;
-    color: red;
-    padding: 6px 8px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button#set:hover{
-    font-size: large;
-}
-button#set:focus{
-    font-size: large;
 }
 
 .timer div p{
@@ -106,31 +79,58 @@ input {
 }
 
 div.control{
-    margin-top: 5%;
-    width: 38%;
-    display: flex;
-    justify-content: space-evenly;
+    margin: 35px auto;
+    width: 50%;
     padding: 15px 0px;
-    border: 1px solid rgb(21, 252, 252);
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
 }
 
 .running{
     border: 1px solid red;
 }
 
-.control p{
+.control button{
     /* border: 1px solid rgb(21, 252, 252); */
-    padding: 3px;
+    border: 2px solid red;
+    color: red;
+    display: inline-block;
+    padding: 10px 15px;
+    font-weight: lighter;
+    border-radius: 5px;
     cursor: pointer;
+    position: relative;
+    margin: 0px 5%;
+    background-color: inherit;
 }
 
-.control p:focus{
-    /* border: 1px solid rgb(21, 252, 252); */
-    padding: 3px;
-    filter: brightness(50%);
+.control button:focus{
+    border: 2px solid orange;
+    color: orange;
 }
 
+.control button:hover {
+    border: 2px solid orangered;
+    color: orangered;
+}
+
+#start{
+    position: absolute;
+    padding-left:5px ;
+}
+
+.opacity {
+    filter: opacity(0);
+}
+
+.fadein {
+    filter: opacity(1);
+}
+
+.fadeout {
+    filter: opacity(0);
+}
 
 
 /* .set {

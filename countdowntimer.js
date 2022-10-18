@@ -1,7 +1,6 @@
     const set= document.querySelector('button#set')
-    const stop= document.querySelector('p#stop')
-    const Reset= document.querySelector('p#reset')
-    const startORpause= document.querySelector('p#sorp')
+    const Reset= document.querySelector('button#reset')
+    const startORpause= document.querySelector('button#sorp')
     const time= document.querySelector('.time div')
     const timeName= document.querySelector('.timer div span')
     const input= document.querySelectorAll('input')
@@ -39,21 +38,24 @@
 
     function moveon(num){
         const target = input[num]
-        let ivalue= target.value.length
+        let ilength= target.value.length
         let nextInputIndex = input[num+1]
         let noIndex = input[4]
 
-        if(ivalue<2){
+        if(ilength<2){
             target.addEventListener('keypress',e=>{
                 if (e.key === "Enter"){
+                    if (target==input[3]){
+                        set.focus()
+                    }
                     nextInputIndex.focus()
                 }else removeEventListener('keypress', undefined)
             })
         }
-        if (ivalue==2 && nextInputIndex!=noIndex){
+        if (ilength==2 && nextInputIndex!=noIndex){
             console.log('yipeeeeeee')
             nextInputIndex.focus()
-        } else if(ivalue==2 && nextInputIndex==noIndex){
+        } else if(ilength==2 && nextInputIndex==noIndex){
 
         set.focus()            
         }
@@ -62,6 +64,12 @@
 
     startORpause.addEventListener('click',e=>{
 
+        const start = document.querySelector('#start')
+        const pause = document.querySelector('#pause')
+
+        start.classList.toggle('fadeout')
+        pause.classList.toggle('opacity')
+        pause.classList.toggle('fadein')
         startORpause.classList.toggle('running')
         // if(startORpause.classList.contains('running')){
 
@@ -110,3 +118,9 @@
             }
        
     })
+
+    Reset.addEventListener('click', (e)=>{
+        
+    })
+
+    
