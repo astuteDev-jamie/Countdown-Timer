@@ -142,6 +142,14 @@ div.control{
     filter: opacity(0);
 }
 
+footer {
+    margin: 40px auto 0px;
+}
+
+footer p {
+    color: rgb(217, 217, 218);
+}
+
 @media 
         (max-width:635),
         (orientation:portrait)
