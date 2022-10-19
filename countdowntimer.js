@@ -13,7 +13,7 @@
             i.toggleAttribute('disabled')
             if(!i.hasAttribute('disabled')){
                 i.value=''
-            }
+            } else startORpause.focus()
         })
         if (input[0].hasAttribute('disabled')){
             for (i=0; i<input.length; i++){
@@ -62,16 +62,18 @@
         return
     }
 
+    function vibrateThings(element){
+        let interval= setInterval(()=>{
+            element.classList.toggle('vibrator')
+        },100)
+        setTimeout(()=>clearInterval(interval),600) 
+    }
+
     startORpause.addEventListener('click',e=>{
 
+        startORpause.classList.toggle('running')
         const start = document.querySelector('#start')
         const pause = document.querySelector('#pause')
-
-        start.classList.toggle('fadeout')
-        pause.classList.toggle('opacity')
-        pause.classList.toggle('fadein')
-        startORpause.classList.toggle('running')
-        // if(startORpause.classList.contains('running')){
 
             let dayValue = runValue[0].textContent*86400000
             let hourValue = runValue[1].textContent*3600000
@@ -80,6 +82,13 @@
             const allValue = dayValue+hourValue+minuteValue+secondValue
             const present = new Date().getTime()
             const future = new Date(present + allValue)
+            //future value may be the possible source of glitch 
+
+            if (allValue !=0){
+            start.classList.toggle('fadeout')
+            pause.classList.toggle('opacity')
+            pause.classList.toggle('fadein')
+            }
 
             
             if(allValue!=0){    
@@ -95,32 +104,39 @@
                 const hour =Math.floor((countDownTime%days)/hours)
                 const minute =Math.floor((countDownTime%hours)/minutes)
                 const second =Math.floor((countDownTime%minutes)/seconds);
+
+                
+                if (countDownTime!=0 && !startORpause.classList.contains('running')){
+                    clearInterval(counter)
+                    second++
+                }
+                
             
                 runValue[0].textContent=day.toString().padStart(2,'0')
                 runValue[1].textContent=hour.toString().padStart(2,'0')
                 runValue[2].textContent=minute.toString().padStart(2,'0')
                 runValue[3].textContent=second.toString().padStart(2,'0')
 
-                if (countDownTime!=0 && !startORpause.classList.contains('running')){
-                    clearInterval(counter)
-                    second++
-                }
-                else if (countDownTime<=0){
+                if (countDownTime<=0){
                     runValue[0].textContent='00'
                     runValue[1].textContent='00'
                     runValue[2].textContent='00'
                     runValue[3].textContent='00'
                     clearInterval(counter)
                 }
+
             },1000)
             } else {
                set.focus()
+               vibrateThings(set)
             }
        
     })
 
     Reset.addEventListener('click', (e)=>{
-        
+        if(startORpause.classList.contains('running')){
+            vibrateThings(startORpause)
+        } else allValue=0
     })
 
     

@@ -10,7 +10,6 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    /* font-size:calc(100% - 10vmin) ; */
 }
 
 header {
@@ -73,7 +72,7 @@ input {
     filter: opacity(1);
 }
 
-.timer div span{
+.time div span{
     text-align: center;
     z-index: 2;
 }
@@ -92,7 +91,6 @@ div.control{
 }
 
 .control button{
-    /* border: 1px solid rgb(21, 252, 252); */
     border: 2px solid red;
     color: red;
     display: inline-block;
@@ -115,6 +113,10 @@ div.control{
     color: orangered;
 }
 
+.vibrator{
+    transform: translateX(3px);
+}
+
 #start{
     position: absolute;
     padding-left:5px ;
@@ -132,9 +134,43 @@ div.control{
     filter: opacity(0);
 }
 
+@media 
+        (max-width:635),
+        (orientation:portrait)
+{
+    .timer div p {
+        /* max-width: calc(); */
+        font-size: calc(11.6vmin - 3px);
+    }
 
-/* .set {
-    background-color: white;
-    color: black;
-    cu
-} */
+    .days,.hours,.minutes,.seconds{
+        padding:calc(5vmin - 5.7px)
+    }
+
+    .time div span{
+        font-size: calc(3vmin - 2px);
+        text-align: center;
+    }
+
+    input {
+        padding:5px calc(4vmin + 4px) 3vmin calc(5.7vmin - 6px);
+        font-size: calc(9.98vmin - 4px);
+        left: 0px;
+        border-right: 55px solid white;
+        width: calc(20.2vmin - 4px);
+    }
+
+    div.control {
+        width: calc(50% - 20px)
+    }
+
+    .control button{
+        padding: 7px 12px;
+        font-size: calc(4vmin - 6px);
+    }
+
+    h1 {
+        font-size: calc(6vmin - 2px);
+    }
+
+}
