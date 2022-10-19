@@ -68,9 +68,17 @@ input {
     filter: opacity(0);
 }
 
+input:focus ~ span {
+    color: black;
+}
+
 .edit {
     filter: opacity(1);
 }
+
+/* .visible {
+    color: black;
+} */
 
 .time div span{
     text-align: center;
@@ -105,12 +113,12 @@ div.control{
 
 .control button:focus{
     border: 2px solid orange;
-    color: orange;
+    color:white;
 }
 
 .control button:hover {
     border: 2px solid orangered;
-    color: orangered;
+    color: white;
 }
 
 .vibrator{
@@ -165,6 +173,7 @@ div.control{
     }
 
     .control button{
+        font-weight: bold;
         padding: 7px 12px;
         font-size: calc(4vmin - 6px);
     }

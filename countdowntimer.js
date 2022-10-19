@@ -5,12 +5,14 @@
     const timeName= document.querySelector('.timer div span')
     const input= document.querySelectorAll('input')
     const runValue=document.querySelectorAll('.time p') 
+    // const spans = document.querySelectorAll('.time div span')
 
 
     set.addEventListener('click',e=>{
         input.forEach(i=>{
             i.classList.toggle('edit')
             i.toggleAttribute('disabled')
+            // spans.forEach(span=>span.classList.toggle('visible'))
             if(!i.hasAttribute('disabled')){
                 i.value=''
             } else startORpause.focus()
