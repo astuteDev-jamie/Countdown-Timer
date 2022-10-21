@@ -6,42 +6,31 @@
 }
 
 body {
-    background-color: black;
+    background:linear-gradient(black 30%, green );
     display: flex;
     flex-direction: column;
     height: 100vh;
+    /* justify-content: space-around; */
 }
 
 header {
-    /* display: flex;
-    justify-content: center; */
-
     padding: 30px;
-    /* height: 25%; */
 }
 
-h1{
+h1 {
     text-align: center;
-   
 }
-
 
 main{
-    /* height: 75%; */
     margin-top: 20px;
     align-items: center;
-    display: flex;
     flex-direction: column;
-    /* justify-content: center; */
 }
 
 div.timer{
-    width: 60%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 17%;
+    margin:20px auto;
 }
+
 div.timer .time{
     display: flex;
     justify-content: center;
@@ -56,22 +45,6 @@ div.timer .time{
     overflow: clip;
     display: flex;
     flex-direction: column;
-}
-
-button#set{
-    border: 2px solid red;
-    color: red;
-    padding: 6px 8px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button#set:hover{
-    font-size: large;
-}
-button#set:focus{
-    font-size: large;
 }
 
 .timer div p{
@@ -96,45 +69,140 @@ input {
     filter: opacity(0);
 }
 
+input:focus ~ span {
+    color: black;
+}
+
 .edit {
     filter: opacity(1);
 }
 
-.timer div span{
+/* .visible {
+    color: black;
+} */
+
+.time div span{
     text-align: center;
     z-index: 2;
 }
 
 div.control{
-    margin-top: 5%;
-    width: 38%;
-    display: flex;
-    justify-content: space-evenly;
+    margin: 35px auto;
+    width: 50%;
     padding: 15px 0px;
-    border: 1px solid rgb(21, 252, 252);
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
 }
 
 .running{
     border: 1px solid red;
 }
 
-.control p{
-    /* border: 1px solid rgb(21, 252, 252); */
-    padding: 3px;
+.control button{
+    border: 2px solid red;
+    color: cyan;
+    display: inline-block;
+    padding: 10px 15px;
+    font-weight: lighter;
+    border-radius: 5px;
     cursor: pointer;
+    position: relative;
+    margin: 0px 5%;
+    background-color: inherit;
 }
 
-.control p:focus{
-    /* border: 1px solid rgb(21, 252, 252); */
-    padding: 3px;
-    filter: brightness(50%);
+.control button:focus{
+    border: 2px solid orange;
+    color:white;
 }
 
+.control button:hover {
+    border: 2px solid orangered;
+    color: white;
+}
 
+#start{
+    position: absolute;
+    padding-left:3px ;
+}
 
-/* .set {
-    background-color: white;
-    color: black;
-    cu
-} */
+.vibrator{
+    transform: translateX(3px);
+}
+
+.redeffect {
+    filter: brightness(165%);
+    border: 1px solid red;
+    color: red;
+}
+
+.redeffecttext {
+    filter: brightness(175%);
+    color: red;
+}
+
+.opacity {
+    filter: opacity(0);
+}
+
+.fadein {
+    filter: opacity(1);
+}
+
+.fadeout {
+    filter: opacity(0);
+}
+
+footer {
+    margin: 35px auto 0px;
+}
+
+footer p {
+    color: rgb(197, 197, 198);
+}
+
+@media 
+        (max-width:562px)
+{
+    .timer div p {
+        font-size: calc(11.6vmin - 3px);
+    }
+
+    .days,.hours,.minutes,.seconds{
+        padding:calc(5vmin - 5.7px)
+    }
+
+    .time div span{
+        font-size: calc(3vmin - 2px);
+        text-align: center;
+    }
+
+    input {
+        padding:5px calc(4vmin + 4px) 3vmin calc(5.7vmin - 6px);
+        font-size: calc(9.98vmin - 4px);
+        left: 0px;
+        border-right: 55px solid white;
+        width: calc(20.2vmin - 4px);
+    }
+
+    div.control {
+        width: calc(50% - 20px)
+    }
+
+    .control button{
+        font-weight: bold;
+        padding: 7px 12px;
+        font-size: calc(4vmin - 6px);
+    }
+
+    h1 {
+        font-size: calc(6vmin - 2px);
+    }
+    
+    footer p {
+        color: rgb(197, 197, 198);
+        font-size: calc(5vmin - 1.5px);
+    }
+
+}
