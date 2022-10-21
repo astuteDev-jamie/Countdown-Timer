@@ -115,7 +115,7 @@
                 runValue[2].textContent=minute.toString().padStart(2,'0')
                 runValue[3].textContent=second.toString().padStart(2,'0')
 
-                if (second <= 30){
+                if (minute<=0 && second <= 30){
                     time[3].classList.add('redeffect')
                     runValue[3].classList.add('redeffecttext')
                     timeName[3].classList.add('redeffecttext')
