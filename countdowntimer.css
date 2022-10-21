@@ -10,6 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    /* justify-content: space-around; */
 }
 
 header {
@@ -121,13 +122,24 @@ div.control{
     color: white;
 }
 
+#start{
+    position: absolute;
+    padding-left:3px ;
+}
+
 .vibrator{
     transform: translateX(3px);
 }
 
-#start{
-    position: absolute;
-    padding-left:5px ;
+.redeffect {
+    filter: brightness(165%);
+    border: 1px solid red;
+    color: red;
+}
+
+.redeffecttext {
+    filter: brightness(175%);
+    color: red;
 }
 
 .opacity {
@@ -143,19 +155,17 @@ div.control{
 }
 
 footer {
-    margin: 40px auto 0px;
+    margin: 35px auto 0px;
 }
 
 footer p {
-    color: rgb(217, 217, 218);
+    color: rgb(197, 197, 198);
 }
 
 @media 
-        (max-width:635),
-        (orientation:portrait)
+        (max-width:562px)
 {
     .timer div p {
-        /* max-width: calc(); */
         font-size: calc(11.6vmin - 3px);
     }
 
@@ -188,6 +198,11 @@ footer p {
 
     h1 {
         font-size: calc(6vmin - 2px);
+    }
+    
+    footer p {
+        color: rgb(197, 197, 198);
+        font-size: calc(5vmin - 1.5px);
     }
 
 }
