@@ -1,5 +1,3 @@
 # Countdown-Timer
 
-i still got some challenges with this project, i'll list them below.
-
-if you feel you can help make some improvements, make a pull request
+you can check out this project with the link https://james-e-o.github.io/Countdown-Timer/
